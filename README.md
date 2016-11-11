@@ -1,5 +1,5 @@
 # installer-docker-compose
-install docker-compose
+install docker-compose for CentOS7
 
 - docker-engine
 - docker-compose
