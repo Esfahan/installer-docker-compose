@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CURRENT_DIR=`dirname $0`
+
 echo '----------------'
 echo 'create docker.repo'
 echo '----------------'
@@ -7,7 +9,7 @@ REPO_FILE='/etc/yum.repos.d/docker.repo'
 if [ -e ${REPO_FILE} ]; then
     echo 'already exists.'
 else
-    sudo cp ./docker.repo ${REPO_FILE}
+    sudo cp ${CURRENT_DIR}/docker.repo ${REPO_FILE}
 fi
 
 echo '----------------'
