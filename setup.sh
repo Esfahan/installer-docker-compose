@@ -2,40 +2,8 @@
 DOCKER_COMPOSE_VER=1.15.0
 CURRENT_DIR=`dirname $0`
 
-echo '----------------'
-echo 'create docker.repo'
-echo '----------------'
-REPO_FILE='/etc/yum.repos.d/docker.repo'
-if [ -e ${REPO_FILE} ]; then
-    echo 'already exists.'
-else
-    sudo cp ${CURRENT_DIR}/docker.repo ${REPO_FILE}
-fi
-
-echo '----------------'
-echo 'install docker engine'
-echo '----------------'
-sudo yum install -y docker-engine
-
-echo '----------------'
-echo 'boot docker'
-echo '----------------'
-sudo systemctl status docker | grep running >/dev/null 2>&1
-if [ $? = 1 ]; then
-    sudo systemctl start docker
-else
-    echo 'already started.'
-fi
-
-echo '----------------'
-echo 'enable docker'
-echo '----------------'
-sudo systemctl status docker | grep enable >/dev/null 2>&1
-if [ $? = 1 ]; then
-    sudo systemctl enable docker
-else
-    echo 'already enabled.'
-fi
+# submodule
+./installer-docker/setup.sh
 
 echo '----------------'
 echo 'install docker-compose'

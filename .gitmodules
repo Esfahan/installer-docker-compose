@@ -1,0 +1,4 @@
+[submodule "installer-docker"]
+	path = installer-docker
+	url = https://github.com/Esfahan/installer-docker.git
+	ignore = dirty
