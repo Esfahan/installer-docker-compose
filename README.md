@@ -7,5 +7,6 @@ install docker-compose for CentOS7
 ## Usage
 
 ```
-$ /bin/sh setup.sh
+$ git submodule update -i && git submodule foreach git pull origin master
+$ ./setup.sh
 ```
