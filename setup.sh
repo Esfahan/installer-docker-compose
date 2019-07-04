@@ -1,5 +1,5 @@
 #!/bin/bash
-DOCKER_COMPOSE_VER=1.15.0
+DOCKER_COMPOSE_VER=1.24.0
 CURRENT_DIR=`dirname $0`
 
 # submodule
